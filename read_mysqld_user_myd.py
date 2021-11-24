@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # https://dev.mysql.com/doc/internals/en/layout-record-storage-frame.html
-
+import argparse
 
 def read_len(content, begin, l):
     sum_len = 0
@@ -112,7 +112,11 @@ def read_records(filename):
 
 
 def main():
-    read_records('/usr/local/var/mysql/mysql/user.MYD')
+    parser = argparse.ArgumentParser(description="Parse MySQL user table")
+    parser.add_argument("-s","--source",help="file user.myd",type=str,required=True)
+    args = parser.parse_args()
+
+    read_records(args.source)
 
 
 if __name__ == '__main__':
