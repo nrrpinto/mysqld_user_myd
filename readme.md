@@ -6,6 +6,10 @@ Works in Windows or Linux, did not try in iOS virus operating system.
 
 License is the same, all credits to @feix
 
+### Syntax 
+
+python.exe .\read_mysqld_user_myd.py -s "<path>\user.MYD"
+
 ### user.MYD file parser
 
 parse `host` `user` `pass` from ${datadir}/mysql/user.MYD
